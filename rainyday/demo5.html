@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>rainyday.js demo #5 (cropping)</title>
+        <style media="screen">
+            body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #canvasHolder {
+            	position: absolute;
+            	top: 50px;
+            	left: 50px;
+            	width: 100px;
+            	height: 100px;
+            }
+        </style>
+        <script src="js/rainyday.js"></script>
+        <script>
+            function run() {
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this,        //image：模拟玻璃窗的图片元素，必须填写。
+                        blur: 10,                    //  blur：定义模糊的下雨雨滴效果。如果不提供值，默认为10。设置为0表示无模糊效果。
+                        crop: [ 50, 50, 600, 400],        //如果只使用图像的某一部分，用此参数提供坐标。如果不提供则默认为整幅图片。
+                                                        // parentElement：canvas的父元素，如果不提供则默认为body。
+                        opacity: 1                             // opacity：定义雨滴的透明度。如果不提供默认为1。
+                    }, document.getElementById('canvas'));
+                    engine.trail = engine.TRAIL_SMUDGE;
+                    engine.rain([ [3, 3, 0.1] ], 33);
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = 'http://i.imgur.com/HRtuQo8.jpg';
+            }
+        </script>
+    </head>
+    <body onload="run();">
+        <img id="background" alt="background" src="" />
+        <div id="canvasHolder">
+        	<canvas id="canvas" width="600" height="400"></canvas>
+        </div>
+    </body>
+</html>

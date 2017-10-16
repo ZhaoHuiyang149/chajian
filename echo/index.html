@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echo延迟加载测试</title>
+    <script src="js/echo.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="img/load.png" alt="pic" data-echo="img/dog.jpg" width="640" height="480">
+    </div>
+    <div>
+        <img src="img/load.png" alt="pic" data-echo="img/girl.jpg" width="640" height="480">
+    </div>
+    <div>
+        <img src="img/load.png" alt="pic" data-echo="img/favorite.jpg" width="640" height="480">
+    </div>
+</body>
+<script type="text/javascript">
+  echo.init({
+    offset: 0,
+    throttle: 1000
+  });
+</script>
+</html>
