@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+</head>
+<body>
+ <div>2020年11月23日 00:00:00距离现在还有：</div>
+ <div id="sw-downside-time"></div>
+</body>
+<script>
+    $('#sw-downside-time').countdown('2020/11/23', function(event) {
+    $(this).html(event.strftime('%w weekend %d day %H:%M:%S'));
+    });
+</script>
+</html>
