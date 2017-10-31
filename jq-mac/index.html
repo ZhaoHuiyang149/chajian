@@ -158,6 +158,9 @@
 </body>
 
 <script type="text/javascript">
+//	在div上绑定监听事件，必须保证<div class="jspHorizontalBar"></div>已经加载完成，才能进行绑定事件。
+//  若页面上未出现<div class="jspHorizontalBar"></div>,则有可能是js进行了异步加载，页面未渲染完成就已经进行绑定事件，此时不会出现滚动条。
+//  保险起见，js代码请用同步加载，而非异步加载。
   $(function()
   {
     var bars = '.jspHorizontalBar, .jspVerticalBar';

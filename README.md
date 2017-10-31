@@ -35,4 +35,6 @@
   
 - jquery.countdown：实现倒计时的效果，依赖于jQuery。
 
-- jq-mac：实现较为好看的滚动条效果。使用jQuery插件jScrollPane开发Mac OSX Lion风格的滚动条
+- jq-mac：实现较为好看的滚动条效果。使用jQuery插件jScrollPane开发Mac OSX Lion风格的滚动条。
+
+- select-chosen: 下拉框插件，可控制option的宽度和select的宽度，依赖于jQuery。
